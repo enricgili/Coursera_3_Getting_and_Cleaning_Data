@@ -1,9 +1,10 @@
----
-title: "How run_analysis.R works"
-output: html_document
----
 
-Load all text files into data frames
+# Course Project "Getting and Cleaning Data"
+### This document describes how the run_analysis.R script works.
+
+
+
+First, load all text files into data frames
 
 ```
 subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt")
