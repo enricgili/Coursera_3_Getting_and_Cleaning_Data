@@ -32,36 +32,36 @@ colnames(subdata_train) <- variablesMeanStd[,2]
 trainData <- cbind(subject_train,y_train,subdata_train)
 
 #Combine test and train data sets
-alldata <- rbind(testData,trainData)
+dataset <- rbind(testData,trainData)
 #name 'subject' and 'activity' columns 
-colnames(alldata)[1] <- "Subject"
-colnames(alldata)[2] <- "Activity"
+colnames(dataset)[1] <- "Subject"
+colnames(dataset)[2] <- "Activity"
 
 
 #Order data by subject and activity
-alldata <- alldata[ order(alldata[,1],alldata[,2]),]
+dataset <- dataset[ order(dataset[,1],dataset[,2]),]
 #remove row names added by order() function
-rownames(alldata) <- NULL
+rownames(dataset) <- NULL
 
 #3. Uses descriptive activity names to name the activities in the data set
 
 # convert Activity column values in to factor and use the labels from activity_labels
-alldata$Activity <- factor(alldata$Activity,labels=activity_labels[,2])
+dataset$Activity <- factor(dataset$Activity,labels=activity_labels[,2])
 
 #4. Appropriately labels the data set with descriptive variable names.
 
 # rename abbreviations with full words
-colnames(alldata) <- gsub("^t","Time",colnames(alldata))
-colnames(alldata) <- gsub("Acc","Acceleration",colnames(alldata))
-colnames(alldata) <- gsub("Gyro","Gyroscopic",colnames(alldata))
-colnames(alldata) <- gsub("Mag","Magnitude",colnames(alldata))
-colnames(alldata) <- gsub("^f","Frequency",colnames(alldata))
+colnames(dataset) <- gsub("^t","Time",colnames(dataset))
+colnames(dataset) <- gsub("Acc","Acceleration",colnames(dataset))
+colnames(dataset) <- gsub("Gyro","Gyroscopic",colnames(dataset))
+colnames(dataset) <- gsub("Mag","Magnitude",colnames(dataset))
+colnames(dataset) <- gsub("^f","Frequency",colnames(dataset))
 
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 # create aggregate set based on activity and subject variable
-tidySet <- aggregate(alldata, by=list(Activity = alldata[,2],Subject = alldata[,1]),FUN=mean)
+tidySet <- aggregate(dataset, by=list(Activity = dataset[,2],Subject = dataset[,1]),FUN=mean)
 
 # clean up data frame by removing duplicate and NA columns 
 tidySet  <- subset(tidySet ,select = -c(3,4))
