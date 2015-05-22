@@ -76,7 +76,7 @@ rownames(dataset) <- NULL
 
 ## 3. Uses descriptive activity names to name the activities in the data set
 
-convert Activity column values in to factor and use the labels from activity_labels
+convert Activity column values to factor and use the labels from activity_labels
 ```
 dataset$Activity <- factor(dataset$Activity,labels=activity_labels[,2])
 ```

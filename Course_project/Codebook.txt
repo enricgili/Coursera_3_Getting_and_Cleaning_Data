@@ -1,2 +1,60 @@
-Codebook Document
 
+The data set included in the file tidydataset.txt is originally based on the "Human Activity Recognition Using Smartphones Dataset" Version 1.0 by:
+
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Universit‡ degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+
+The dataset contains 180 observations of 68 variables
+
+For each record it is provided:
+======================================
+
+- Activity: one of the six activities performed by the experiment subjects (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+- Subject: unique id of the 30 volunteers within an age bracket of 19-48 years who carried the experiment
+
+For each subject and each activity the average of a variable has been calculated. The variables included in the dataset for each subject and activity are the average of multiple observations. For example, in the original set there wer 95 observations of Subject 1 conducting activity 1 (Walking). We have included in this tidy set the average of each variable for these 95 observations.
+
+Human activity tracking variables included
+-------------------------------------------
+
+The next features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (TimeBodyAcceleration-XYZ and TimeGravityAcceleration-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (TimeBodyAccelerationJerk-XYZ and TimeBodyGyroscopic-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (TimeBodyAccelerationMagnitude, TimeGravityAccelerationMagnitude, TimeBodyAccelerationJerkMagnitude, TimeBodyGyroscopicMagnitude, TimeBodyGyroscopicJerkMagnitude). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing FrequencyBodyAcceleration-XYZ, FrequencyBodyAccelerationJerk-XYZ, FrequencyBodyGyroscopic-XYZ, FrequencyBodyAccelerationMagnitude, FrequencyBodyBodyGyroscopicMagnitude, FrequencyBodyBodyGyroscopicJerkMagnitude. ('Frequency' indicates frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+- TimeBodyAcceleration-XYZ
+- TimeGravityAcceleration-XYZ
+- TimeBodyAccelerationJerk--XYZ
+- TimeBodyGyroscopic--XYZ
+- TimeBodyGyroscopicJerk-XYZ
+- TimeBodyAccelerationMagnitude
+- TimeGravityAccelerationMagnitude
+- TimeBodyAccelerationJerkMagnitude
+- TimeBodyGyroscopicMagnitude           
+- TimeBodyGyroscopicJerkMagnitude
+
+- FrequencyBodyAcceleration-XYZ
+- FrequencyBodyAccelerationJerk-XYZ
+- FrequencyBodyGyroscopic-XYZ
+- FrequencyBodyAccelerationMagnitude
+- FrequencyBodyBodyAccelerationJerkMagnitude
+- FrequencyBodyBodyGyroscopicMagnitude
+- FrequencyBodyBodyGyroscopicJerkMagnitude
+
+The set of variables that were estimated from these signals are:
+
+mean(): Mean value
+std(): Standard deviation
+
+
+The dataset includes the following files:
+=========================================
+- tidydataset.txt
